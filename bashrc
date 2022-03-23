@@ -7,12 +7,12 @@
 
 # Functions
 if [ -f ~/.bash_functions ]; then
-  source ~/.bash_functions
+	source ~/.bash_functions
 fi
 
 # Aliases
 if [ -f ~/.bash_aliases ]; then
-  source ~/.bash_aliases
+	source ~/.bash_aliases
 fi
 
 LANG=uk_UA.UTF-8
