@@ -1,6 +1,7 @@
 alias аллобялть='echo шо'
 alias когда='echo завтра.'
 alias м='echo м'
+alias chown='chown -v'
 alias cls='clear'
 alias cp='cp -v'
 alias diff='diff --color=auto'
