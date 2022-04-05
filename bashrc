@@ -23,4 +23,6 @@ export PATH="$PATH:$GEM_HOME/bin"
 
 pridefetch -f trans
 
+shopt -s dotglob
+
 PS1='\W \$ '
