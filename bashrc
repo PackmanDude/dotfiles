@@ -21,7 +21,7 @@ LANG=uk_UA.UTF-8
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
-pridefetch -f trans
+neofetch
 
 shopt -s dotglob
 
