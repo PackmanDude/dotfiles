@@ -16,13 +16,8 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 LANG=uk_UA.UTF-8
-
-# PATH additions
-export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin"
+shopt -s dotglob
 
 neofetch
-
-shopt -s dotglob
 
 PS1='\W \$ '
