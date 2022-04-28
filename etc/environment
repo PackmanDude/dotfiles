@@ -1,0 +1,16 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on separate lines
+#
+
+GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
+PROTONSTEAMAPPS="~/SteamLibrary/steamapps"
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$PATH
+PATH="$PATH:~/.local/bin:$GEM_HOME/bin:$PROTONSTEAMAPPS/common/Proton 4.11/dist/bin"
+WINEPREFIX="~/.wine"
+VISUAL=nano
+EDITOR=nano
+MANOPT=-L ru
+MESA_GL_VERSION_OVERRIDE=3.3
+MESA_GLSL_VERSION_OVERRIDE=330
