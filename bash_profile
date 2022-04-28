@@ -5,4 +5,5 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
-export PATH="$PATH:$GEM_HOME/bin:/home/packman/.local/bin"
+export PROTONSTEAMAPPS="~/SteamLibrary/steamapps"
+export PATH="$PATH:$GEM_HOME/bin:/home/packman/.local/bin:$PROTONSTEAMAPPS/common/Proton 4.11/dist/bin"
