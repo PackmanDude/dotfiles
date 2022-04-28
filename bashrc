@@ -7,16 +7,16 @@
 
 # Functions
 if [ -f ~/.bash_functions ]; then
-	source ~/.bash_functions
+	. ~/.bash_functions
 fi
 
 # Aliases
 if [ -f ~/.bash_aliases ]; then
-	source ~/.bash_aliases
+	. ~/.bash_aliases
 fi
 
-LANG=uk_UA.UTF-8
 shopt -s dotglob
+LANG=uk_UA.UTF-8
 
 neofetch
 
