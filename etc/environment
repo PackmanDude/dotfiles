@@ -6,7 +6,7 @@
 
 GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 PROTONSTEAMAPPS="~/SteamLibrary/steamapps"
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$PATH
+PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/games:/usr/local/games:/snap/bin:$PATH
 PATH="$PATH:/home/packman/.local/bin:$GEM_HOME/bin:$PROTONSTEAMAPPS/common/Proton 4.11/dist/bin"
 VISUAL=nano
 EDITOR=nano
