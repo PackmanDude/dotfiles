@@ -58,11 +58,15 @@
 ## will be the terminal's width minus this number.
 # set fill -8
 
+## Draw a vertical stripe at the given column, to help judge text width.
+## (This option does not have a default value.)
+set guidestripe 80
+
 ## Remember the used search/replace strings for the next session.
 # set historylog
 
 ## Display a "scrollbar" on the righthand side of the edit window.
-# set indicator
+set indicator
 
 ## Scroll the buffer contents per half-screen instead of per line.
 # set jumpyscrolling
@@ -73,7 +77,7 @@ set linenumbers
 ## Enable vim-style lock-files.  This is just to let a vim user know you
 ## are editing a file [s]he is trying to edit and vice versa.  There are
 ## no plans to implement vim-style undo state in these files.
-# set locking
+set locking
 
 ## Fall back to slow libmagic to try and determine an applicable syntax.
 # set magic
@@ -165,7 +169,7 @@ set linenumbers
 
 ## Use the end of the title bar for some state flags: I = auto-indenting,
 ## M = mark, L = hard-wrapping long lines, R = recording, S = soft-wrapping.
-# set stateflags
+set stateflags
 
 ## Use this tab size instead of the default; it must be greater than 0.
 set tabsize 4
@@ -175,6 +179,9 @@ set tabsize 4
 
 ## Snip whitespace at the end of lines when justifying or hard-wrapping.
 set trimblanks
+
+## Save files by default in Unix format (also when they were DOS or Mac).
+# set unix
 
 ## The two single-column characters used to display the first characters
 ## of tabs and spaces.  187 in ISO 8859-1 (0000BB in Unicode) and 183 in
@@ -186,16 +193,16 @@ set trimblanks
 
 ## Detect word boundaries differently by treating punctuation
 ## characters as parts of words.
-# set wordbounds
+set wordbounds
 
 ## The characters (besides alphanumeric ones) that should be considered
 ## as parts of words.  This option does not have a default value.  When
 ## set, it overrides option 'set wordbounds'.
-# set wordchars "<_>."
+# set wordchars "<-_>.,"
 
 ## Let an unmodified Backspace or Delete erase the marked region (instead
 ## of a single character, and without affecting the cutbuffer).
-# set zap
+set zap
 
 ## Hide the bars plus help lines and use the whole terminal as edit area.
 # set zero
@@ -228,8 +235,10 @@ set titlecolor bold,white,magenta
 # set keycolor lightmagenta
 # set functioncolor magenta
 
+## Mine:
 set numbercolor bold,black
 set stripecolor ,brightblack
+
 
 ## === Syntax coloring ===
 ## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
@@ -284,18 +293,23 @@ include "/usr/share/nano-syntax-highlighting/*.nanorc"
 ## For quickly uppercasing or lowercasing the word under the cursor.
 ## (These effectively do a Ctrl+Right followed by a Shift+Ctrl+Left,
 ## and then pipe the selected text through a sed command.)
-# bind Sh-M-U "Oc[1;6D|sed 's/.*/\U&/'
-" main
-# bind Sh-M-L "Oc[1;6D|sed 's/.*/\L&/'
-" main
+# bind Sh-M-U "Oc[1;6D|sed 's/.*/\U&/'" main
+# bind Sh-M-L "Oc[1;6D|sed 's/.*/\L&/'" main
+
+## For copying a marked region to the system clipboard:
+# bind Sh-M-T "|xsel -ibu" main
 
 ## If you would like nano to have keybindings that are more "usual",
 ## such as ^O for Open, ^F for Find, ^H for Help, and ^Q for Quit,
 ## then uncomment these:
+#bind ^X cut main
+#bind ^C copy main
+#bind ^V paste all
 #bind ^Q exit all
 #bind ^S savefile main
 #bind ^W writeout main
 #bind ^O insert main
+#set multibuffer
 #bind ^H help all
 #bind ^H exit help
 #bind ^F whereis all
@@ -303,25 +317,23 @@ include "/usr/share/nano-syntax-highlighting/*.nanorc"
 #bind ^B wherewas all
 #bind ^D findprevious all
 #bind ^R replace main
-#bind ^X cut main
-#bind ^C copy main
-#bind ^V paste all
-#bind ^P location main
-#bind ^E execute main
-#bind ^A mark main
+#bind ^Z undo main
+#bind ^Y redo main
 #unbind ^K main
 #unbind ^U all
 #unbind ^N main
 #unbind ^Y all
 #unbind M-J main
 #unbind M-T main
+#bind ^A mark main
+#bind ^P location main
 #bind ^T gotoline main
 #bind ^T gotodir browser
 #bind ^T cutrestoffile execute
 #bind ^L linter execute
-#bind M-U undo main
-#bind M-R redo main
-#bind ^Z undo main
-#bind ^Y redo main
-#set multibuffer
-set guidestripe 80
+#bind ^E execute main
+
+
+## Highlight trailing whitespace
+syntax "default"
+icolor ,green "[[:space:]]+$"
