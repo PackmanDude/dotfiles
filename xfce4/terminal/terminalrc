@@ -24,7 +24,7 @@ MiscRewrapOnResize=TRUE
 MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
-MiscSearchDialogOpacity=90
+MiscSearchDialogOpacity=100
 MiscShowUnsafePasteDialog=FALSE
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 ScrollingUnlimited=TRUE
@@ -32,6 +32,7 @@ ColorForeground=#ffffffffffff
 ColorBackground=#000000000000
 ColorPalette=#000000;#cd0000;#00cd00;#cdcd00;#0000cd;#cd00cd;#00cdcd;#e5e5e5;#7f7f7f;#ff0000;#00ff00;#ffff00;#5c5cff;#ff00ff;#00ffff;#ffffff
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
-BackgroundDarkness=0,9
+BackgroundDarkness=0,900000
 FontName=Monospace 14
 TitleMode=TERMINAL_TITLE_PREPEND
+
