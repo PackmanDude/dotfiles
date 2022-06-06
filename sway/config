@@ -23,7 +23,7 @@ set $menu dmenu_run
 # Default layout
 workspace_layout tabbed
 
-default_border none
+default_border pixel 1
 default_floating_border pixel 1
 titlebar_padding 1
 for_window [title=".*"] floating enable
