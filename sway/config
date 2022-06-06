@@ -24,9 +24,9 @@ set $menu dmenu_run
 workspace_layout tabbed
 
 default_border none
-default_floating_border none
+default_floating_border pixel 1
 titlebar_padding 1
-title_align center
+for_window [title=".*"] floating enable
 
 include /etc/sway/config-vars.d/*
 
