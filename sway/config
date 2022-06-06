@@ -26,7 +26,13 @@ workspace_layout tabbed
 #default_border pixel 1
 #default_floating_border pixel 1
 titlebar_padding 1
-for_window [title="^(?!(firefox|discord)$).*$"] floating enable
+#for_window [title="^(?!(firefox|discord)$).*$"] floating enable
+for_window
+{
+	[title=".*" tiling] border none
+	[title=".*" floating] border pixel 2
+	[window_role="(pop-up|bubble|dialog)"] floating enable
+}
 
 include /etc/sway/config-vars.d/*
 
@@ -175,9 +181,9 @@ input "1133:49298:Logitech_G102_LIGHTSYNC_Gaming_Mouse"
     bindsym $mod+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle; \
-		[title=".*" tiling con_id=__focused__] border none; \
-		[title=".*" floating con_id=__focused__] border pixel 2
+    bindsym $mod+Shift+space floating toggle
+#		[title=".*" tiling con_id=__focused__] border none; \
+#		[title=".*" floating con_id=__focused__] border pixel 1
 
     # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
