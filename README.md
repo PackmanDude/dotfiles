@@ -7,4 +7,4 @@ Sway and Waybar is just massive **WIP** for now and a few weeks too, I think.
 
 ## Cat
 cat.  
-![cat](https://raw.githubusercontent.com/PackmanDude/dotfiles/main/Screenshot%202022-06-05%20at%2020-54-34%20PackmanDude%20-%20Repositories.png)
+![Past year of activity](https://raw.githubusercontent.com/PackmanDude/dotfiles/main/Screenshot%202022-06-05%20at%2020-54-34%20PackmanDude%20-%20Repositories.png)
