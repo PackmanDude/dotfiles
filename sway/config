@@ -23,14 +23,14 @@ set $menu dmenu_run
 # Default layout
 workspace_layout tabbed
 
-#default_border pixel 1
-#default_floating_border pixel 1
+default_border none
+default_floating_border pixel
 titlebar_padding 1
-#for_window [title="^(?!(firefox|discord)$).*$"] floating enable
 for_window
 {
 	[title=".*" tiling] border none
-	[title=".*" floating] border pixel 2
+	[title=".*" floating] border pixel
+#	[title="^(?!(firefox|discord)$).*$"] floating enable
 	[window_role="(pop-up|bubble|dialog)"] floating enable
 }
 
