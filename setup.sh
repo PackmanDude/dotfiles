@@ -23,16 +23,21 @@ chooseWhatToDo()
 	read -p "What you want, dude or dudessa? (0 - exit; 1..21 - input) " software
 
 	case $software in
-		0) echo "Abort..."; exit;;
-		1) install("bash");;
-		2) install("i3+status");;
-		4) install("mpv");;
-		8) install("nano");;
+		0)  echo "Abort..."; exit;;
+		1)  install("bash");;
+		2)  install("i3+status");;
+		4)  install("mpv");;
+		8)  install("nano");;
 		16) install("sway+waybar");;
 		32) install("xfce4-terminal");;
-		33) install("xfce4-terminal", "bash");;
-		34) install("xfce4-terminal", "i3+status");;
-		35) install("xfce4-terminal", "bash", "i3+status");;
+		#--#--#--#--#-###-#--#--#--#--#
+		3) install("bash", "i3+status");;
+		5) install("mpv", "bash");;
+		6) install("mpv", "i3+status");;
+		7) install("mpv", "bash", "i3+status");;
+		9) install("nano", "bash");;
+		10) install("nano", "i3+status");;
+		11) install("nano", "bash", "i3+status");;
 
 
 		*) echo "Not impelemented answer, aborting"; exit 1;;
