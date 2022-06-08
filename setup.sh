@@ -25,13 +25,14 @@ chooseWhatToDo()
 	case $software in
 		0) echo "Abort..."; exit;;
 		1) install("bash");;
-		2) install("bash", "i3+status");;
-		3) install("bash", "i3+status", "mpv");;
-		4) install("bash", "i3+status", "mpv", "nano");;
-		5) install("bash", "i3+status", "mpv", "nano", "sway+waybar");;
-		6) install("bash", "i3+status", "mpv", "nano", "sway+waybar", "xfce4-terminal");;
-		7) install("xfce4-terminal", "bash");;
-		8) install("
+		2) install("i3+status");;
+		4) install("mpv");;
+		8) install("nano");;
+		16) install("sway+waybar");;
+		32) install("xfce4-terminal");;
+		33) install("xfce4-terminal", "bash");;
+		34) install("xfce4-terminal", "i3+status");;
+		35) install("xfce4-terminal", "bash", "i3+status");;
 
 
 		*) echo "Not impelemented answer, aborting"; exit 1;;
