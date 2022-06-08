@@ -20,16 +20,21 @@ chooseWhatToDo()
 	echo "First (bash) is equal 1, next is 2 and so on. To choose multiple, summarize all of it to know"
 	echo "what you wants exactly from script to do for you."
 
-	read -p "What you want, dude or dudessa? (0 - exit; 1..55 - input) " software
+	read -p "What you want, dude or dudessa? (0 - exit; 1..21 - input) " software
 
 	case $software in
 		0) echo "Abort..."; exit;;
-		1) 
+		1) install("bash");;
+		2) install("bash", "i3+status");;
+		3) install("bash", "i3+status", "mpv");;
+		4) install("bash", "i3+status", "mpv", "nano");;
+		5) install("bash", "i3+status", "mpv", "nano", "sway+waybar");;
+		6) install("bash", "i3+status", "mpv", "nano", "sway+waybar", "xfce4-terminal");;
+		7) install("xfce4-terminal", "bash");;
+		8) install("
 
 
-
-
-		* ) echo "Not impelemented answer, aborting"; exit 1;;
+		*) echo "Not impelemented answer, aborting"; exit 1;;
 	esac
 }
 
