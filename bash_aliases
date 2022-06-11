@@ -32,7 +32,7 @@ alias ll='ls -l'
 #
 alias mkdir='mkdir -pv'
 alias mv='mv -iv'
-alias neofetch='pridefetch -f ukrainian'
+alias neofetch='pridefetch'
 alias rm='rm -rv'
 alias rmdir='rmdir -v'
 alias wget='wget -rnd'
