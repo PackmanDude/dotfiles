@@ -112,5 +112,7 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-LANG=uk_UA.UTF-8
+export LANG=uk_UA.UTF-8
+export VISUAL=nano
+export EDITOR="$VISUAL"
 neofetch
