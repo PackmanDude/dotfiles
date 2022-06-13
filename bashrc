@@ -112,4 +112,5 @@ if ! shopt -oq posix; then
 	fi
 fi
 
+LANG=uk_UA.UTF-8
 neofetch
