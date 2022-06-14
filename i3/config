@@ -45,7 +45,7 @@ bindsym XF86AudioLowerVolume exec amixer -q set Master 1%- unmute && $refresh_i3
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 1%+ unmute && $refresh_i3status
 bindsym XF86AudioMute exec amixer -q set Master toggle && $refresh_i3status
 # Alternative
-bindsym $mod+minus exec amixer -q set Master 1%+ unmute && $refresh_i3status
+bindsym $mod+minus exec amixer -q set Master 1%- unmute && $refresh_i3status
 bindsym $mod+equal exec amixer -q set Master 1%+ unmute && $refresh_i3status
 
 # Disable DPMS
