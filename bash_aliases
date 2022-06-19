@@ -13,14 +13,20 @@ alias когда='echo завтра.'
 alias м='echo м'
 
 ## Інше
+alias cls='clear'
 alias ..='cd ..'
 alias gcc='gcc -Wall -Wextra -Wpedantic -Wformat=2 -Wno-unused-parameter \
 			-Wshadow -Wwrite-strings -Wstrict-prototypes \
 			-Wold-style-definition -Wredundant-decls -Wnested-externs \
 			-Wmissing-include-dirs -Wjump-misses-init -Wlogical-op'
-alias chown='chown -v'
-alias cls='clear'
+#
+alias mv='mv -iv'
 alias cp='cp -riv'
+alias rm='rm -rIv'
+alias rmdir='rmdir -v'
+#
+alias chmod='chmod -v'
+alias chown='chown -v'
 #
 alias ls='ls -F'
 alias lA='ls -lA'
@@ -30,11 +36,9 @@ alias lhA='lA -h'
 alias lha='la -h'
 alias ll='ls -l'
 #
+alias find='find -print'
 alias mkdir='mkdir -pv'
-alias mv='mv -iv'
 alias neofetch='pridefetch'
-alias rm='rm -Iv'
-alias rmdir='rmdir -v'
 alias wget='wget -rnd'
 alias whoami='echo "I'\''m Travis. Travis Scott"'
 alias yt-audio='\youtube-dl -x --audio-quality=0 --audio-format=mp3'
