@@ -43,7 +43,7 @@ memory
 wireless _first_
 {
 		format_up = "%essid [%quality] %ip"
-		format_down = " down"
+		format_down = " off"
 }
 
 tztime local
