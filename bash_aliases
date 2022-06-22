@@ -1,5 +1,6 @@
 ## Кольори
 alias ls='ls --color=auto'
+alias diff='diff --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 #
@@ -36,7 +37,6 @@ alias lhA='lA -h'
 alias lha='la -h'
 alias ll='ls -l'
 #
-alias find='find -print'
 alias mkdir='mkdir -pv'
 alias neofetch='pridefetch'
 alias wget='wget -rnd'
