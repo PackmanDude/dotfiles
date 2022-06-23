@@ -37,6 +37,7 @@ alias lhA='lA -h'
 alias lha='la -h'
 alias ll='ls -l'
 #
+alias screencast='screencast -s 1920x1080 -b 0 -r 60 -u -f mkv -n'
 alias mkdir='mkdir -pv'
 alias neofetch='pridefetch'
 alias wget='wget -rnd'
