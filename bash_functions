@@ -1,7 +1,7 @@
 # find without access errors display
 function find()
 {
-	find $@ 2>&1 | grep -v "Відмовлено у доступі"
+	/usr/bin/env find $@ 2>&1 | grep -v "Відмовлено у доступі"
 }
 
 # ls Largest Files
