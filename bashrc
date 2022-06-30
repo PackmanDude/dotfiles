@@ -103,4 +103,5 @@ export VISUAL=nano
 export EDITOR="$VISUAL"
 
 # Autostart
+cls
 neofetch
