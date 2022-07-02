@@ -104,4 +104,4 @@ export EDITOR="$VISUAL"
 
 # Autostart
 cls
-neofetch
+[ "$(tty)" = "/dev/tty2" ] && neofetch
