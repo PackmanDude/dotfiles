@@ -44,4 +44,5 @@ alias whoami='echo "I'\''m Travis. Travis Scott"'
 alias yt-audio='\youtube-dl -x --audio-quality=0 --audio-format=mp3'
 alias youtube-dl='youtube-dl -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio --merge-output-format=mp4'
 alias zip='zip -r'
-alias screencast='ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i $DISPLAY -f alsa -ac 2 -i pulse -c:v libx264 -c:a aac -strict experimental Videos/output.mkv'
+alias screencast='ffmpeg -f x11grab -framerate 60 -i $DISPLAY -f alsa -ac 2 \
+		-i pulse -c:v libx264 -c:a aac -strict experimental Videos/output.mkv'
