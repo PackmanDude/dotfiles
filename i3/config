@@ -41,12 +41,13 @@ exec dex --autostart --environment i3
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute && $refresh_i3status
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute && $refresh_i3status
-bindsym XF86AudioMute exec amixer -q set Master toggle && $refresh_i3status
+bindsym XF86AudioLowerVolume 	exec amixer -q set Master 2%- unmute && $refresh_i3status
+bindsym XF86AudioRaiseVolume 	exec amixer -q set Master 2%+ unmute && $refresh_i3status
+bindsym XF86AudioMute			exec amixer -q set Master toggle	 && $refresh_i3status
 # Alternatively
-bindsym $mod+minus exec amixer -q set Master 2%- unmute && $refresh_i3status
-bindsym $mod+equal exec amixer -q set Master 2%+ unmute && $refresh_i3status
+bindsym $mod+minus	exec amixer -q set Master 2%- unmute && $refresh_i3status
+bindsym $mod+equal	exec amixer -q set Master 2%+ unmute && $refresh_i3status
+bindsym $mod+0		exec amixer -q set Master toggle	 && $refresh_i3status
 
 # Disable DPMS
 exec xset dpms 0 0 0
@@ -157,7 +158,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+#bindsym $mod+0 workspace number $ws10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -169,12 +170,12 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+#bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
