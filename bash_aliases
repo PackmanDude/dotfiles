@@ -20,6 +20,7 @@ alias gcc='gcc -Wall -Wextra -Wpedantic -Wformat=2 -Wno-unused-parameter \
 			   -Wshadow -Wwrite-strings -Wstrict-prototypes \
 			   -Wold-style-definition -Wredundant-decls -Wnested-externs \
 			   -Wmissing-include-dirs -Wjump-misses-init -Wlogical-op'
+alias git-push='git add * && git commit -a && git push'
 #
 alias mv='mv -iv'
 alias cp='cp -riv'
