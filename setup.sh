@@ -3,13 +3,13 @@
 
 if [ $EUID -eq 0 ]; then
 	echo "This script should be not run as root user." > /dev/stderr
-	exit 1
+	exit 13	# EACCES
 fi
 
-read -p "This script applies dotfiles, do you want to proceed? (it will ask later, what to apply) [Y/n] " yn
+read -p "This script applies dotfiles, do you want to proceed? (it will ask later, what things to apply) [Y/n] " yn
 
 case $yn in
-	[Yy]*)	chooseWhatToDo();
+	[Yy]*)	ChooseWhatToDo();
 			break
 	;;
 
@@ -18,11 +18,10 @@ case $yn in
 	;;
 
 	*)		echo "Not impelemented answer, choosing 'No'";
-			exit 1
+			exit 5 # EIO
 	;;
 esac
 
-## Main stuff goes here down in the deep
 ChooseWhatToDo()
 {
 	echo "There's a few kinds of software to choose: [bash/i3+status/mpv/nano/xfce4-terminal]"
@@ -35,7 +34,7 @@ ChooseWhatToDo()
 	nano=8
 	xfce4-term=16
 
-	read -p "What you want, dude or dudessa? (1..31 - input; 0 - exit) " software
+	read -p "(1..31 - input; 0 - exit) Choose: " software
 
 	case $software in
 		0)	echo "Aborting"; exit;;
@@ -71,8 +70,8 @@ ChooseWhatToDo()
 		30)	Install $xfce4-term $nano $mpv $i3;;
 		31)	Install $xfce4-term $nano $mpv $bash $i3;;
 		*)	echo "Not impelemented answer, aborting";
-			exit 1
-			;;
+			exit 5 # EIO
+		;;
 	esac
 }
 
@@ -83,11 +82,8 @@ Install()
 		for i in {0..$($#-1)}
 		do
 			case $i in
-				
+				# WIP
 			esac
 		done
 	done
-
 }
-
-exit
