@@ -17,6 +17,7 @@ order += "volume master"
 order += "cpu_temperature 0"
 order += "memory"
 order += "wireless _first_"
+order += "ethernet _first_"
 order += "tztime local"
 
 volume master
@@ -42,8 +43,14 @@ memory
 
 wireless _first_
 {
-		format_up = "%essid [%quality] %ip"
+		format_up = " %essid [%quality] %ip"
 		format_down = " off"
+}
+
+ethernet _first_
+{
+        format_up = " %ip (%speed)"
+        format_down = " off"
 }
 
 tztime local
