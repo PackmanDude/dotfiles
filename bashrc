@@ -103,5 +103,5 @@ export VISUAL=nano
 export EDITOR="$VISUAL"
 
 # Autostart
-cls
-[ "$(tty)" = "/dev/tty2" ] && neofetch
+[ ! $SSH_TTY ] && cls
+neofetch
