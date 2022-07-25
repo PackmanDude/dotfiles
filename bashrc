@@ -101,6 +101,7 @@ fi
 export LANG=uk_UA.UTF-8
 export VISUAL=nano
 export EDITOR="$VISUAL"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Autostart
 [ ! $SSH_TTY ] && cls
