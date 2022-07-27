@@ -9,3 +9,13 @@ function lslf()
 {
 	du -hxs -- * | sort -rh | head -${1:-10}
 }
+
+# nano
+function nano()
+{
+	nano="/usr/bin/env nano"
+
+	[[ "$1" == *.java ]] && \
+	$nano -J 120 "$1" || \
+	$nano "$1"
+}
