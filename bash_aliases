@@ -42,4 +42,6 @@ alias mkdir='mkdir -pv'
 alias neofetch='pridefetch'
 alias wget='wget -rnd'
 alias whoami='echo "I'\''m Travis. Travis Scott"'
+alias youtube-dl='yt-dlp'
 alias zip='zip -r'
+
