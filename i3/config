@@ -41,13 +41,13 @@ exec dex --autostart --environment i3
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioLowerVolume 	exec amixer -q set Master 2%- unmute && $refresh_i3status
-bindsym XF86AudioRaiseVolume 	exec amixer -q set Master 2%+ unmute && $refresh_i3status
-bindsym XF86AudioMute			exec amixer -q set Master toggle	 && $refresh_i3status
+bindsym XF86AudioLowerVolume 	exec amixer -q set Master 2%-		&& $refresh_i3status
+bindsym XF86AudioRaiseVolume 	exec amixer -q set Master 2%+		&& $refresh_i3status
+bindsym XF86AudioMute			exec amixer -q set Master toggle	&& $refresh_i3status
 # Alternatively
-bindsym $mod+minus	exec amixer -q set Master 2%- unmute && $refresh_i3status
-bindsym $mod+equal	exec amixer -q set Master 2%+ unmute && $refresh_i3status
-bindsym $mod+0		exec amixer -q set Master toggle	 && $refresh_i3status
+bindsym $mod+minus	exec amixer -q set Master 2%-		&& $refresh_i3status
+bindsym $mod+equal	exec amixer -q set Master 2%+		&& $refresh_i3status
+bindsym $mod+0		exec amixer -q set Master toggle	&& $refresh_i3status
 
 # Disable DPMS
 exec xset dpms 0 0 0
