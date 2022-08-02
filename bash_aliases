@@ -43,5 +43,5 @@ alias neofetch='pridefetch'
 alias wget='wget -rnd'
 alias whoami='echo "I'\''m Travis. Travis Scott"'
 alias youtube-dl='yt-dlp'
+alias yt-dlp='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"'
 alias zip='zip -r'
-
