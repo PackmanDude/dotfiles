@@ -1,5 +1,5 @@
 # find without access errors display
-function find()
+function find-silently()
 {
 	/usr/bin/env find $@ 2>&1 | grep -v "Відмовлено у доступі"
 }
