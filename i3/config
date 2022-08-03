@@ -52,6 +52,9 @@ bindsym $mod+0		exec amixer -q set Master toggle	&& $refresh_i3status
 # Disable DPMS
 exec xset dpms 0 0 0
 
+# Modify screensaver's interval
+exec xset s 3600 3600
+
 # Mouse setting
 exec_always xinput set-prop 'Logitech G102 LIGHTSYNC Gaming Mouse' 'libinput Accel Speed' -1    # Acceleration set -1 for 2800 DPI
 
