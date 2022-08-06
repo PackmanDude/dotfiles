@@ -1,6 +1,6 @@
 [Configuration]
 MiscAlwaysShowTabs=FALSE
-MiscBell=FALSE
+MiscBell=TRUE
 MiscBellUrgent=FALSE
 MiscBordersDefault=FALSE
 MiscCursorBlinks=TRUE
@@ -34,4 +34,7 @@ ColorBackground=#000000000000
 ColorPalette=#000000;#cd0000;#00cd00;#cdcd00;#0000cd;#cd00cd;#00cdcd;#e5e5e5;#7f7f7f;#ff0000;#00ff00;#ffff00;#5c5cff;#ff00ff;#00ffff;#ffffff
 MiscRightClickAction=TERMINAL_RIGHT_CLICK_ACTION_CONTEXT_MENU
 BackgroundDarkness=0.900000
+ShortcutsNoHelpkey=TRUE
+ShortcutsNoMenukey=TRUE
+ShortcutsNoMnemonics=TRUE
 
