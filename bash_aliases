@@ -20,10 +20,9 @@ alias gcc='gcc -Wall -Wextra -Wpedantic -Wformat=2 -Wno-unused-parameter \
 			   -Wshadow -Wwrite-strings -Wstrict-prototypes \
 			   -Wold-style-definition -Wredundant-decls -Wnested-externs \
 			   -Wmissing-include-dirs -Wjump-misses-init -Wlogical-op'
-alias git-push='git add * && git commit -a && git push'
 #
 alias mv='mv -iv'
-alias cp='cp -riv'
+alias cp='cp -aiv'
 alias rm='rm -rIv'
 alias rmdir='rmdir -v'
 #
@@ -38,6 +37,7 @@ alias lhA='lA -h'
 alias lha='la -h'
 alias ll='ls -l'
 #
+alias irssi='LANG=en_US.UTF-8 irssi'
 alias mkdir='mkdir -pv'
 alias neofetch='pridefetch'
 alias wget='wget -rnd'
