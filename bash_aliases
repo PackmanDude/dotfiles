@@ -1,5 +1,5 @@
 ## Кольори
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -F'
 alias diff='diff --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
@@ -29,7 +29,6 @@ alias rmdir='rmdir -v'
 alias chmod='chmod -v'
 alias chown='chown -v'
 #
-alias ls='ls -F'
 alias lA='ls -lA'
 alias la='ls -la'
 alias lh='ls -lh'
