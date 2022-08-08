@@ -20,9 +20,6 @@ exec_always picom -b --config /dev/null --unredir-if-possible --vsync --use-dama
 # Wallpapers
 exec nitrogen --restore
 
-# CoreCtrl
-exec corectrl &
-
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
@@ -59,11 +56,11 @@ exec xset dpms 0 0 0
 exec xset s 3600 3600
 
 # Mouse setting
-exec_always xinput set-prop 'Logitech G102 LIGHTSYNC Gaming Mouse' 'libinput Accel Speed' -1    # Acceleration set -1 for 2800 DPI
+exec_always xinput set-prop 'Logitech G102 LIGHTSYNC Gaming Mouse' 'libinput Accel Speed' -1	# Acceleration set -1 for 2800 DPI
 
 # Touchpad setting
-exec xinput set-prop 'ETPS/2 Elantech Touchpad' 'libinput Tapping Enabled' 1                    # Tap-to-click enable
-exec xinput set-prop 'ETPS/2 Elantech Touchpad' 'libinput Scroll Method Enabled' 0 1 0          # Edge scroll enable
+exec xinput set-prop 'ETPS/2 Elantech Touchpad' 'libinput Tapping Enabled' 1					# Tap-to-click enable
+exec xinput set-prop 'ETPS/2 Elantech Touchpad' 'libinput Scroll Method Enabled' 0 1 0			# Edge scroll enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
