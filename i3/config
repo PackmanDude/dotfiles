@@ -20,6 +20,9 @@ exec_always picom -b --config /dev/null --unredir-if-possible --vsync --use-dama
 # Wallpapers
 exec nitrogen --restore
 
+# CoreCtrl autostart
+exec corectrl
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 # font pango:DejaVu Sans Mono 8
