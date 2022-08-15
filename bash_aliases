@@ -3,6 +3,8 @@ alias ls='ls --color=auto -F'
 alias diff='diff --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
+alias pacman='pacman --color=auto'
+alias yay='yay --color=auto'
 #
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
