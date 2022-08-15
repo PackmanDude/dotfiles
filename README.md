@@ -2,7 +2,7 @@
 My dotfiles.
 
 ### Yay setup
-Yay — is an AUR helper, to get the same behavior of it as mine, use:
+Yay – is an AUR helper, to get the same behavior of it as mine, use:
 
 ```bash
 yay --combinedupgrade --save
