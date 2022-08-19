@@ -28,3 +28,4 @@ fi
 
 #if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 #fi
+#export QT_QPA_PLATFORMTHEME=gtk2
