@@ -11,11 +11,11 @@ function lslf()
 }
 
 # nano
-function nano()
-{
-	nano="/usr/bin/env nano"
-
-	[[ "$1" == *.java ]] && \
-	$nano -J 120 "$1" || \
-	$nano "$1"
-}
+#function nano()
+#{
+#	nano="/usr/bin/env nano"
+#
+#	[[ "$1" == *.java ]] && \
+#	$nano -J 120 "$1" || \
+#	$nano "$1"
+#}
