@@ -1,7 +1,7 @@
 # find without access errors display
 function find-silently()
 {
-	/usr/bin/env find $@ 2>&1 | grep -v "Відмовлено у доступі"
+	/usr/bin/env find $@ 2>&1 | grep -v 'Відмовлено у доступі'
 }
 
 # ls Largest Files
@@ -11,11 +11,11 @@ function lslf()
 }
 
 # nano
-#function nano()
-#{
-#	nano="/usr/bin/env nano"
-#
-#	[[ "$1" == *.java ]] && \
-#	$nano -J 120 "$1" || \
-#	$nano "$1"
-#}
+function nano()
+{
+	nano='/usr/bin/env nano'
+
+	[[ "$@" == *.java ]] && \
+	$nano -J 120 "$@" || \
+	$nano "$@"
+}
