@@ -1,7 +1,7 @@
 [Configuration]
 MiscAlwaysShowTabs=FALSE
 MiscBell=TRUE
-MiscBellUrgent=FALSE
+MiscBellUrgent=TRUE
 MiscBordersDefault=FALSE
 MiscCursorBlinks=TRUE
 MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
@@ -25,7 +25,7 @@ MiscUseShiftArrowsToScroll=FALSE
 MiscSlimTabs=FALSE
 MiscNewTabAdjacent=FALSE
 MiscSearchDialogOpacity=100
-MiscShowUnsafePasteDialog=FALSE
+MiscShowUnsafePasteDialog=TRUE
 TitleMode=TERMINAL_TITLE_REPLACE
 ScrollingUnlimited=TRUE
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
