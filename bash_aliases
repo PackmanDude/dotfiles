@@ -37,7 +37,6 @@ alias ll='ls -l'
 #
 alias mkdir='mkdir -pv'
 alias neofetch='pridefetch'
-alias update-grub='grub-mkconfig -o /boot/grub/grub.cfg'
 alias wget='wget -rnd'
 alias whoami='echo "I'\''m Travis. Travis Scott"'
 alias youtube-dl='yt-dlp'
