@@ -8,52 +8,52 @@
 
 general
 {
-		colors = true
-		interval = 1
-		output_format = "i3bar"
+	colors = true
+	interval = 1
+	output_format = 'i3bar'
 }
 
-order += "volume master"
-order += "cpu_temperature 0"
-order += "memory"
-order += "wireless _first_"
-order += "ethernet _first_"
-order += "tztime local"
+order += 'volume master'
+order += 'cpu_temperature 0'
+order += 'memory'
+order += 'wireless _first_'
+order += 'ethernet _first_'
+order += 'tztime local'
 
 volume master
 {
-		format = "🔊 %volume"
-		format_muted = "🔈 %volume"
-		device = "sysdefault"
-		mixer = "Master"
-		mixer_idx = 0
+	format = '🔊 %volume'
+	format_muted = '🔈 %volume'
+	device = 'sysdefault'
+	mixer = 'Master'
+	mixer_idx = 0
 }
 
 cpu_temperature 0
 {
-		format = " %degrees °C"
-		format_above_threshold = " %degrees °C"
-		path = "/sys/class/thermal/thermal_zone1/temp"
+	format = ' %degrees °C'
+	format_above_threshold = ' %degrees °C'
+	path = '/sys/class/thermal/thermal_zone1/temp'
 }
 
 memory
 {
-		format = " %percentage_used"
+	format = ' %percentage_used'
 }
 
 wireless _first_
 {
-		format_up = " %essid [%quality] %ip"
-		format_down = " off"
+	format_up = ' %essid [%quality] %ip'
+	format_down = ' off'
 }
 
 ethernet _first_
 {
-        format_up = "🌐 %ip"
-        format_down = "🌐 off"
+	format_up = '🌐 %ip'
+	format_down = '🌐 off'
 }
 
 tztime local
 {
-		format = "%-I:%M:%S %p |"	# 1:23:45 PM
+	format = '%-I:%M:%S %p |'	# 1:23:45 PM
 }
