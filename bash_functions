@@ -1,7 +1,7 @@
 # find without access errors display
 function find-silently()
 {
-	/usr/bin/env find $@ 2>&1 | grep -v 'Відмовлено у доступі'
+	/usr/bin/env find $@ 2>/dev/null
 }
 
 # ls Largest Files
