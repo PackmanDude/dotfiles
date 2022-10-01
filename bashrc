@@ -71,5 +71,5 @@ export EDITOR="$VISUAL"
 export PATH="$PATH:$HOME/.local/bin"
 
 # Autostart
-[[ -z $SSH_TTY ]] && cls
+[[ ! $SSH_TTY ]] && cls
 neofetch
