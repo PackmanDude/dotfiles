@@ -24,6 +24,9 @@ HISTFILESIZE=-1
 # match all files and zero or more directories and subdirectories.
 shopt -s globstar
 
+# Include hidden file(s) with globbing too.
+shopt -s dotglob
+
 # Do not overwrite
 set -o noclobber
 
