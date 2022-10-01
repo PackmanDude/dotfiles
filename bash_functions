@@ -1,7 +1,7 @@
 # find without access errors display
 function find-silently()
 {
-	/usr/bin/env find $@ 2>/dev/null
+	/usr/bin/env find "$@" 2>/dev/null
 }
 
 # ls Largest Files
@@ -15,7 +15,7 @@ function nano()
 {
 	nano='/usr/bin/env nano'
 
-	[[ "$@" == *.java ]] && \
-	$nano -J 120 "$@" || \
-	$nano "$@"
+	[[ "$@" = *.java || "$@" = *'.java '* ]] \
+	&& $nano -J 120 "$@" \
+	|| $nano "$@"
 }
