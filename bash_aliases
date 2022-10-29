@@ -35,6 +35,7 @@ alias lhA='lA -h'
 alias lha='la -h'
 alias ll='ls -l'
 #
+alias convert='convert -quality 100'
 alias gallery-dl='gallery-dl -D .'
 alias mkdir='mkdir -pv'
 alias neofetch='pridefetch'

@@ -15,7 +15,7 @@ function nano()
 {
 	nano='/usr/bin/env nano'
 
-	[[ "$@" = *.java || "$@" = *'.java '* ]] \
+	[[ "$*" = *.java || "$*" = *'.java '* ]] \
 	&& $nano -J 120 "$@" \
 	|| $nano "$@"
 }
