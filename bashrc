@@ -35,9 +35,9 @@ set -o noclobber
 
 # set a fancy prompt (non-color, unless we know we "want" color
 case "$TERM" in
-	xterm-color|*-256color) PS1='\D{%-I:%M:%S %p} \[\033[01;34m\]\W\[\033[00m\] \$ '
+	xterm-color|*-256color) PS1='[\D{%-I:%M:%S %p}] \[\033[01;34m\]\W\[\033[00m\] \$ '
 	;;
-	*) PS1='\D{%-I:%M:%S %p} \W \$ '
+	*) PS1='[\D{%-I:%M:%S %p}] \W \$ '
 	;;
 esac
 
