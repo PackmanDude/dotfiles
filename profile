@@ -26,4 +26,10 @@ if [ -d "$HOME/.local/bin" ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
-#export QT_QPA_PLATFORMTHEME=gtk2
+# Environment variables
+export LANG=uk_UA.UTF-8
+export LANGUAGE=en_US:en:C
+export LC_TIME=en_US.UTF-8
+export VISUAL=nano
+export EDITOR=$VISUAL
+export PATH="$PATH:${HOME}/.local/bin"
