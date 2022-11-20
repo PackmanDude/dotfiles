@@ -28,8 +28,7 @@ fi
 
 # Environment variables
 export LANG=uk_UA.UTF-8
-export LANGUAGE=en_US:en:C
+export LANGUAGE=uk_UA:en_US:en:C
 export LC_TIME=en_US.UTF-8
 export VISUAL=nano
 export EDITOR=$VISUAL
-export PATH="$PATH:${HOME}/.local/bin"
