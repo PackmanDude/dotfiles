@@ -69,7 +69,7 @@ fi
 
 # Environment variables
 export LANG=uk_UA.UTF-8
-export LANGUAGE=uk_UA:en_US:en:C
+export LANGUAGE=uk_UA.UTF-8:en_US.UTF-8:en.UTF-8:C.UTF-8:uk_UA:en_US:en:C
 export LC_TIME=en_US.UTF-8
 export VISUAL=nano
 export EDITOR=$VISUAL
