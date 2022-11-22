@@ -35,9 +35,9 @@ set -o noclobber
 
 # set a fancy prompt (non-color, unless we know we "want" color
 case "$TERM" in
-	xterm-color|*-256color) PS1='[\D{%-I:%M:%S %p}] \[\033[01;34m\]\W\[\033[00m\] \$ '
+	xterm-color|*-256color) PS1='\e[1;34m\W\e[m \$ '
 	;;
-	*) PS1='[\D{%-I:%M:%S %p}] \W \$ '
+	*) PS1='\W \$ '
 	;;
 esac
 
@@ -67,6 +67,24 @@ if [ ! shopt -oq posix ]; then
 	fi
 fi
 
+function _timer_start()
+{
+	timer=${timer:-$SECONDS}
+}
+
+function _timer_stop()
+{
+	if [ $? = 0 ]; then
+		echo -e "\e[1;34m~$((SECONDS - timer))s passed\e[m"
+	else
+		echo -e "\e[1;31m~$((SECONDS - timer))s passed\e[m"
+	fi
+	unset timer
+}
+
+trap '_timer_start' DEBUG
+export PROMPT_COMMAND=_timer_stop
+
 # Environment variables
 export LANG=uk_UA.UTF-8
 export LANGUAGE=uk_UA.UTF-8:en_US.UTF-8:en.UTF-8:C.UTF-8:uk_UA:en_US:en:C
@@ -75,5 +93,5 @@ export VISUAL=nano
 export EDITOR=$VISUAL
 
 # Autostart
-[[ ! $SSH_TTY ]] && cls
+[ ! "$SSH_TTY" ] && cls
 neofetch
