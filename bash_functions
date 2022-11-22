@@ -17,6 +17,5 @@ function nano()
 
 	[[ "$*" = *.java || "$*" = *'.java '* ]] \
 	&& $nano -J 120 "$@" \
-
 	|| $nano "$@"
 )
