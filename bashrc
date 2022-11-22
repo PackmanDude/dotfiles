@@ -67,11 +67,12 @@ if [ ! shopt -oq posix ]; then
 	fi
 fi
 
+# Show elapsed time for a previous command
 function _timer_start()
 {
 	timer=${timer:-$SECONDS}
 }
-
+#
 function _timer_stop()
 {
 	if [ $? = 0 ]; then
@@ -81,7 +82,7 @@ function _timer_stop()
 	fi
 	unset timer
 }
-
+#
 trap '_timer_start' DEBUG
 export PROMPT_COMMAND=_timer_stop
 
