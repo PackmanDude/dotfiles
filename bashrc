@@ -76,7 +76,7 @@ function _timer_start()
 function _timer_stop()
 {
 	if [ $? = 0 ]; then
-		echo -e "\e[1;34m~$((SECONDS - timer))s passed\e[m"
+		echo -e "\e[1;32m~$((SECONDS - timer))s passed\e[m"
 	else
 		echo -e "\e[1;31m~$((SECONDS - timer))s passed\e[m"
 	fi
