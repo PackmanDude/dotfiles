@@ -75,12 +75,24 @@ function _timer_start()
 #
 function _timer_stop()
 {
-	if [ $? = 0 ]; then
-		echo -e "\e[1;32m~$(((SECONDS - timer)/60))m$(((SECONDS - timer)%60))s passed\e[m"
+	if [ "$((SECONDS - timer))" -ge 86400 ]; then
+		formatted_timer="~$(((SECONDS - timer)/86400))d$(((SECONDS - timer)%86400/3600))h$(((SECONDS - timer)%3600/60))m$(((SECONDS - timer)%60))s passed"
+	elif [ "$((SECONDS - timer))" -ge 3600 ]; then
+		formatted_timer="~$(((SECONDS - timer)%86400/3600))h$(((SECONDS - timer)%3600/60))m$(((SECONDS - timer)%60))s passed"
+	elif [ "$((SECONDS - timer))" -ge 60 ]; then
+		formatted_timer="~$(((SECONDS - timer)%3600/60))m$(((SECONDS - timer)%60))s passed"
 	else
-		echo -e "\e[1;31m~$(((SECONDS - timer)/60))m$(((SECONDS - timer)%60))s passed\e[m"
+		formatted_timer="~$((SECONDS - timer))s passed"
 	fi
-	unset timer
+
+	if [ "$((SECONDS - timer))" -ne 0 ]; then
+		if [ $? != 0 ]; then
+			echo -e "\e[1;31m$formatted_timer\e[m"
+		else
+			echo -e "\e[1;32m$formatted_timer\e[m"
+		fi
+	fi
+	unset timer formatted_timer
 }
 #
 trap '_timer_start' DEBUG
