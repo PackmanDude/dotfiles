@@ -14,9 +14,6 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:Monospace 8
 
-# Set display refresh rate
-exec_always xrandr --output HDMI-A-0 --mode 1920x1080 --rate 144
-
 # Start a compositor
 exec_always picom -b --config /dev/null --unredir-if-possible --vsync --use-damage --glx-no-stencil
 
