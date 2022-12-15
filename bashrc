@@ -75,6 +75,7 @@ function _timer_start()
 #
 function _timer_stop()
 {
+	ret=$?
 	if [ "$((SECONDS - timer))" -ge 86400 ]; then
 		formatted_timer="~$(((SECONDS - timer)/86400))d$(((SECONDS - timer)%86400/3600))h$(((SECONDS - timer)%3600/60))m$(((SECONDS - timer)%60))s passed"
 	elif [ "$((SECONDS - timer))" -ge 3600 ]; then
@@ -85,11 +86,11 @@ function _timer_stop()
 		formatted_timer="~$((SECONDS - timer))s passed"
 	fi
 
-	if [ "$((SECONDS - timer))" -ne 0 ]; then
-		if [ $? != 0 ]; then
-			echo -e "\e[1;31m$formatted_timer\e[m"
-		else
+	if [ "$((SECONDS - timer))" -gt 0 ]; then
+		if [ $ret -eq 0 ]; then
 			echo -e "\e[1;32m$formatted_timer\e[m"
+		else
+			echo -e "\e[1;31m$formatted_timer\e[m"
 		fi
 	fi
 	unset timer formatted_timer
@@ -99,9 +100,12 @@ trap '_timer_start' DEBUG
 export PROMPT_COMMAND=_timer_stop
 
 # Environment variables
+export LANG=uk_UA.UTF-8
+export LANGUAGE=uk_UA.UTF-8:en_US.UTF-8:en.UTF-8:C.UTF-8:uk_UA:en_US:en:C
+export LC_TIME=en_US.UTF-8
 export VISUAL=nano
 export EDITOR=$VISUAL
 
-# Autostart
+# Autorun
 [ ! "$SSH_TTY" ] && cls
 neofetch
