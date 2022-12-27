@@ -76,24 +76,25 @@ function _timer_start()
 function _timer_stop()
 {
 	ret=$?
-	if [ "$((SECONDS - timer))" -ge 86400 ]; then
-		formatted_timer="~$(((SECONDS - timer)/86400))d$(((SECONDS - timer)%86400/3600))h$(((SECONDS - timer)%3600/60))m$(((SECONDS - timer)%60))s passed"
-	elif [ "$((SECONDS - timer))" -ge 3600 ]; then
-		formatted_timer="~$(((SECONDS - timer)%86400/3600))h$(((SECONDS - timer)%3600/60))m$(((SECONDS - timer)%60))s passed"
-	elif [ "$((SECONDS - timer))" -ge 60 ]; then
-		formatted_timer="~$(((SECONDS - timer)%3600/60))m$(((SECONDS - timer)%60))s passed"
+	elapsed_time=$((SECONDS - timer))
+	if [ $elapsed_time -ge 86400 ]; then
+		formatted_timer="~$((elapsed_time/86400))d$((elapsed_time%86400/3600))h$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
+	elif [ $elapsed_time -ge 3600 ]; then
+		formatted_timer="~$((elapsed_time%86400/3600))h$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
+	elif [ $elapsed_time -ge 60 ]; then
+		formatted_timer="~$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
 	else
-		formatted_timer="~$((SECONDS - timer))s passed"
+		formatted_timer="~${elapsed_time}s passed"
 	fi
 
-	if [ "$((SECONDS - timer))" -gt 0 ]; then
+	if [ $elapsed_time -gt 0 ]; then
 		if [ $ret -eq 0 ]; then
 			echo -e "\e[1;32m$formatted_timer\e[m"
 		else
 			echo -e "\e[1;31m$formatted_timer\e[m"
 		fi
 	fi
-	unset timer ret formatted_timer
+	unset timer ret elapsed_time formatted_timer
 }
 #
 trap '_timer_start' DEBUG
