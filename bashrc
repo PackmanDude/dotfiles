@@ -93,7 +93,7 @@ function _timer_stop()
 			echo -e "\e[1;31m$formatted_timer\e[m"
 		fi
 	fi
-	unset timer formatted_timer
+	unset timer ret formatted_timer
 }
 #
 trap '_timer_start' DEBUG
