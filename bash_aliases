@@ -36,6 +36,7 @@ alias lha='la -h'
 alias ll='ls -l'
 #
 alias gallery-dl='gallery-dl -D .'
+alias makepkg='makepkg -sirc'
 alias mkdir='mkdir -pv'
 alias neofetch='pridefetch'
 alias wget='wget -nc'
