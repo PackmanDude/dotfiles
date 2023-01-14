@@ -15,7 +15,7 @@ set $mod Mod4
 font pango:Monospace 8
 
 # Start a compositor
-exec_always picom --no-startup-id -b --config /dev/null --unredir-if-possible --vsync --use-damage --glx-no-stencil
+exec_always --no-startup-id picom -b --config /dev/null --unredir-if-possible --vsync --use-damage --glx-no-stencil
 
 # Wallpaper setup
 exec --no-startup-id nitrogen --restore
