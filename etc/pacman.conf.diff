@@ -6,7 +6,8 @@
 +Color
  #NoProgressBar
  CheckSpace
- #VerbosePkgLists
+-#VerbosePkgLists
++VerbosePkgLists
 -#ParallelDownloads = 5
 +ParallelDownloads = 100
 +DisableDownloadTimeout
