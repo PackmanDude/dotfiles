@@ -1,0 +1,6 @@
+40,41c40,41
+< 	"editmenu": false,
+< 	"combinedupgrade": false,
+---
+> 	"editmenu": true,
+> 	"combinedupgrade": true,
