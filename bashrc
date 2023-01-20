@@ -101,9 +101,6 @@ trap '_timer_start' DEBUG
 export PROMPT_COMMAND=_timer_stop
 
 # Environment variables
-export LANG=uk_UA.UTF-8
-export LANGUAGE=uk_UA.UTF-8:en_US.UTF-8:en.UTF-8:C.UTF-8
-export LC_TIME=en_US.UTF-8
 export VISUAL=nano
 export EDITOR=$VISUAL
 
