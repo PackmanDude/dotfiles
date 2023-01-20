@@ -1,6 +1,11 @@
-40,41c40,41
-< 	"editmenu": false,
-< 	"combinedupgrade": false,
----
-> 	"editmenu": true,
-> 	"combinedupgrade": true,
+@@ -37,8 +37,8 @@
+ 	"upgrademenu": true,
+ 	"cleanmenu": true,
+ 	"diffmenu": true,
+-	"editmenu": false,
+-	"combinedupgrade": false,
++	"editmenu": true,
++	"combinedupgrade": true,
+ 	"useask": false,
+ 	"batchinstall": false,
+ 	"singlelineresults": false,
