@@ -35,6 +35,7 @@ alias lhA='lA -h'
 alias lha='la -h'
 alias ll='ls -l'
 #
+alias lolcat='lolcat -t'
 alias gallery-dl='gallery-dl -D .'
 alias makepkg='makepkg -sirc'
 alias mkdir='mkdir -pv'
