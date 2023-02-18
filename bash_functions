@@ -23,5 +23,5 @@ function nano()
 # nazi
 function nazi()
 (
-	sed 's/[a-zA-Z]/卐/g'
+	sed 's/[A-Za-z]/卐/g'
 )
