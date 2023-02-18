@@ -15,7 +15,13 @@ function nano()
 (
 	nano='/usr/bin/env nano'
 
-	[[ "$*" = *.java || "$*" = *'.java '* ]] \
-	&& $nano -J 120 "$@" \
+	[ "$*" = *.java ] || [ "$*" = *'.java '* ] \
+	&& $nano "$@" -J 120 \
 	|| $nano "$@"
+)
+
+# nazi
+function nazi()
+(
+	sed 's/[a-zA-Z]/卐/g'
 )
