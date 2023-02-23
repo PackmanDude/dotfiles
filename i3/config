@@ -117,8 +117,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 #bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
-# make screenshot
+# make a screenshot
 bindsym Print exec --no-startup-id flameshot gui
+bindsym Shift+Print exec --no-startup-id "sleep .07; xwd | convert xwd:- png:- | xclip -sel c -t image/png"
 
 # change focus
 #bindsym $mod+j focus left
