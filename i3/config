@@ -27,7 +27,8 @@ exec --no-startup-id corectrl
 exec --no-startup-id parcellite
 
 # Keep EasyEffects running
-exec --no-startup-id nohup easyeffects --gapplication-service
+#exec --no-startup-id nohup easyeffects --gapplication-service
+exec --no-startup-id easyeffects --gapplication-service
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
