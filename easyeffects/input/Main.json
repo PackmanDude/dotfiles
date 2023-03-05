@@ -1,0 +1,55 @@
+{
+    "input": {
+        "blocklist": [],
+        "echo_canceller#0": {
+            "bypass": false,
+            "filter-length": 100,
+            "frame-size": 10,
+            "input-gain": 0.0,
+            "output-gain": 0.0,
+            "residual-echo-suppression": -10
+        },
+        "limiter#0": {
+            "alr": false,
+            "alr-attack": 5.0,
+            "alr-knee": 0.0,
+            "alr-release": 50.0,
+            "attack": 5.0,
+            "bypass": false,
+            "dithering": "None",
+            "external-sidechain": false,
+            "gain-boost": true,
+            "input-gain": 0.0,
+            "lookahead": 5.0,
+            "mode": "Herm Thin",
+            "output-gain": 0.0,
+            "oversampling": "None",
+            "release": 5.0,
+            "sidechain-preamp": 0.0,
+            "stereo-link": 100.0,
+            "threshold": 0.0
+        },
+        "loudness#0": {
+            "bypass": false,
+            "clipping": false,
+            "clipping-range": 6.0,
+            "fft": "4096",
+            "input-gain": 0.0,
+            "output-gain": 13.0,
+            "std": "ISO226-2003",
+            "volume": 6.999999999999991
+        },
+        "plugins_order": [
+            "loudness#0",
+            "echo_canceller#0",
+            "rnnoise#0",
+            "limiter#0"
+        ],
+        "rnnoise#0": {
+            "bypass": false,
+            "input-gain": 0.0,
+            "model-path": "",
+            "output-gain": 0.0
+        }
+    }
+}
