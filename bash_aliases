@@ -1,6 +1,6 @@
 ## Кольори
 alias ls='ls -F --color=auto'
-alias diff='diff -s --color=auto'
+alias diff='diff -rs --color=auto'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 #
