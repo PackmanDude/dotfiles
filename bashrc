@@ -25,7 +25,8 @@ shopt -s checkwinsize
 shopt -s globstar
 
 # Include hidden file(s) with globbing too.
-shopt -s dotglob
+#shopt -s dotglob
+GLOBIGNORE=".:.."
 
 # Do not overwrite
 set -o noclobber
