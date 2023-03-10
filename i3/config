@@ -20,6 +20,9 @@ exec_always --no-startup-id picom -b --config /dev/null --unredir-if-possible --
 # Wallpaper setup
 exec --no-startup-id nitrogen --restore
 
+# Polkit dumb agent
+exec --no-startup-id polkit-dumb-agent &
+
 # CoreCtrl autostart
 exec --no-startup-id corectrl
 
@@ -28,9 +31,6 @@ exec --no-startup-id parcellite
 
 # Keep EasyEffects running
 exec --no-startup-id easyeffects --gapplication-service
-
-# Polkit dumb agent
-exec --no-startup-id polkit-dumb-agent &
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
