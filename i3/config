@@ -29,13 +29,16 @@ exec --no-startup-id parcellite
 # Keep EasyEffects running
 exec --no-startup-id easyeffects --gapplication-service
 
+# Polkit dumb agent
+exec --no-startup-id polkit-dumb-agent &
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-# font pango:DejaVu Sans Mono 8
+#font pango:DejaVu Sans Mono 8
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
-exec --no-startup-id dex --autostart --environment i3
+#exec --no-startup-id dex -ae i3
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -49,7 +52,7 @@ exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id nm-applet
 
 set $refresh_i3status killall -SIGUSR1 i3status
-# Use amixer to adjust volume in ALSA.
+# Use amixer to adjust volume via ALSA.
 bindsym XF86AudioLowerVolume	exec --no-startup-id amixer -q set Master 2%-		&& $refresh_i3status
 bindsym XF86AudioRaiseVolume	exec --no-startup-id amixer -q set Master 2%+		&& $refresh_i3status
 bindsym XF86AudioMute			exec --no-startup-id amixer -q set Master toggle	&& $refresh_i3status
@@ -59,7 +62,7 @@ bindsym $mod+minus	exec --no-startup-id amixer -q set Master 2%-					&& $refresh
 bindsym $mod+equal	exec --no-startup-id amixer -q set Master 2%+					&& $refresh_i3status
 bindsym $mod+0		exec --no-startup-id amixer -q set Master toggle				&& $refresh_i3status
 
-# Use pactl to adjust volume in PulseAudio.
+# Use pactl to adjust volume via PulseAudio.
 #bindsym XF86AudioLowerVolume	exec --no-startup-id pulseaudio-ctl down +2%	&& $refresh_i3status
 #bindsym XF86AudioRaiseVolume	exec --no-startup-id pulseaudio-ctl up +2%		&& $refresh_i3status
 #bindsym XF86AudioMute			exec --no-startup-id pulseaudio-ctl mute		&& $refresh_i3status
