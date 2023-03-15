@@ -32,3 +32,9 @@ function tohex()
 	xxd -u -i -- < <(echo "$@") | sed -e 's/,//g' -e 's/0X/\\x/g' \
 	-e 's/ //g' | paste -sd ''
 )
+
+# Issue disk sleep mode
+function sleepsda()
+(
+	sudo umount /dev/sda?; sudo hdparm -Y /dev/sda
+)
