@@ -31,6 +31,9 @@ GLOBIGNORE=".:.."
 # Do not overwrite
 set -o noclobber
 
+# Carry pipe exit code (if !=0)
+set -o pipefail
+
 # make less more friendly for non-text input files, see lesspipe(1)
 #[[ -x /usr/bin/lesspipe ]] && eval "$(SHELL=/bin/sh lesspipe)"
 
