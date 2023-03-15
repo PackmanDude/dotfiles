@@ -25,3 +25,10 @@ function nazi()
 (
 	sed 's/[A-Za-z]/卐/g'
 )
+
+# Implementing a new function be like
+function tohex()
+(
+	xxd -u -i -- < <(echo "$@") | sed -e 's/,//g' -e 's/0X/\\x/g' \
+	-e 's/ //g' | paste -sd ''
+)
