@@ -122,7 +122,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 # make a screenshot
 bindsym Print exec --no-startup-id flameshot gui
+bindsym Control+Print exec --no-startup-id "sleep .07; xwd -root | convert xwd:- png:- | xclip -sel c -t image/png"
 bindsym Shift+Print exec --no-startup-id "sleep .07; xwd | convert xwd:- png:- | xclip -sel c -t image/png"
+
 
 # change focus
 #bindsym $mod+j focus left
