@@ -38,3 +38,11 @@ function sleepsda()
 (
 	sudo umount /dev/sda?; sudo hdparm -Y /dev/sda
 )
+
+# Sum given arguments
+function sumargs()
+(
+	selector="$0 $@"
+	[ x"$1"x = xx ] && selector="$(< /dev/stdin)"
+	for i in $selector; do sum=$((sum + i)); done; echo $sum
+)
