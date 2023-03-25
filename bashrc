@@ -92,11 +92,14 @@ function _timer_stop()
 	fi
 
 	if [ $elapsed_time -gt 0 ]; then
-		if [ $ret -eq 0 ]; then
-			echo -e "\e[1;32m$formatted_timer\e[m"
-		else
+		if [ $ret -ne 0 ]; then
 			echo -e "\e[1;31m$formatted_timer\e[m"
+			unset timer ret elapsed_time formatted_timer
+			return
 		fi
+		echo -e "\e[1;32m$formatted_timer\e[m"
+	elif [ $ret -ne 0 ]; then
+		echo -e "\e[1;31m$formatted_timer\e[m"
 	fi
 	unset timer ret elapsed_time formatted_timer
 }
