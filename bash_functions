@@ -7,7 +7,7 @@ function find-silently()
 # ls Largest Files
 function lslf()
 (
-	du -hxs -- * | sort -h | tail -"${1:-10}"
+	du -hxs -- * | sort -hr | head -"$1"
 )
 
 # nano
