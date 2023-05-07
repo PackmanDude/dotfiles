@@ -84,8 +84,8 @@ function _timer_start()
 #
 function _timer_stop()
 {
-	ret=$?
-	elapsed_time=$((SECONDS - timer))
+	local ret=$? formatted_timer
+	local elapsed_time=$((SECONDS - timer))
 	if [ $elapsed_time -ge 86400 ]; then
 		formatted_timer="~$((elapsed_time/86400))d$((elapsed_time%86400/3600))h$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
 	elif [ $elapsed_time -ge 3600 ]; then
@@ -99,14 +99,14 @@ function _timer_stop()
 	if [ $elapsed_time -gt 0 ]; then
 		if [ $ret -ne 0 ]; then
 			echo -e "\e[1;31m$formatted_timer\e[m"
-			unset timer ret elapsed_time formatted_timer
+			unset timer
 			return
 		fi
 		echo -e "\e[1;32m$formatted_timer\e[m"
 	elif [ $ret -ne 0 ]; then
 		echo -e "\e[1;31m$formatted_timer\e[m"
 	fi
-	unset timer ret elapsed_time formatted_timer
+	unset timer
 }
 #
 trap '_timer_start' DEBUG
