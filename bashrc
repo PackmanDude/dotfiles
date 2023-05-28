@@ -117,5 +117,5 @@ export VISUAL=nano
 export EDITOR=$VISUAL
 
 # Autorun
-[ ! "$SSH_TTY" ] && cls
+if [ ! "$SSH_TTY" ] || [ ! "$DISPLAY" ]; then cls; fi
 neofetch
