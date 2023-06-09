@@ -1,0 +1,121 @@
+@@ -60,24 +60,24 @@
+ 
+ ## Draw a vertical stripe at the given column, to help judge text width.
+ ## (This option does not have a default value.)
+-# set guidestripe 75
++set guidestripe 80
+ 
+ ## Remember the used search/replace strings for the next session.
+ # set historylog
+ 
+ ## Display a "scrollbar" on the righthand side of the edit window.
+-# set indicator
++set indicator
+ 
+ ## Scroll the buffer contents per half-screen instead of per line.
+ # set jumpyscrolling
+ 
+ ## Display line numbers to the left (and any anchors in the margin).
+-# set linenumbers
++set linenumbers
+ 
+ ## Enable vim-style lock-files.  This is just to let a vim user know you
+ ## are editing a file [s]he is trying to edit and vice versa.  There are
+ ## no plans to implement vim-style undo state in these files.
+-# set locking
++set locking
+ 
+ ## Fall back to slow libmagic to try and determine an applicable syntax.
+ # set magic
+@@ -157,7 +157,7 @@
+ ## will jump to that beginning (either forwards or backwards).  If the
+ ## cursor is already at that position, it will jump to the true start
+ ## of the line (the left edge).
+-# set smarthome
++set smarthome
+ 
+ ## Spread overlong lines over multiple screen lines.
+ # set softwrap
+@@ -168,16 +168,16 @@
+ 
+ ## Use the end of the title bar for some state flags: I = auto-indenting,
+ ## M = mark, L = hard-wrapping long lines, R = recording, S = soft-wrapping.
+-# set stateflags
++set stateflags
+ 
+ ## Use this tab size instead of the default; it must be greater than 0.
+-# set tabsize 8
++set tabsize 4
+ 
+ ## Convert each typed tab to the fitting number of spaces.
+ # set tabstospaces
+ 
+ ## Snip whitespace at the end of lines when justifying or hard-wrapping.
+-# set trimblanks
++set trimblanks
+ 
+ ## Save files by default in Unix format (also when they were DOS or Mac).
+ # set unix
+@@ -192,7 +192,7 @@
+ 
+ ## Detect word boundaries differently by treating punctuation
+ ## characters as parts of words.
+-# set wordbounds
++set wordbounds
+ 
+ ## The characters (besides alphanumeric ones) that should be considered
+ ## as parts of words.  This option does not have a default value.  When
+@@ -201,7 +201,7 @@
+ 
+ ## Let an unmodified Backspace or Delete erase the marked region (instead
+ ## of a single character, and without affecting the cutbuffer).
+-# set zap
++set zap
+ 
+ ## Hide the bars plus help lines and use the whole terminal as edit area.
+ # set zero
+@@ -210,7 +210,7 @@
+ ## Paint the interface elements of nano.  These are examples; there are
+ ## no colors by default, except for errorcolor and spotlightcolor.
+ # set titlecolor bold,white,blue
+-# set promptcolor lightwhite,grey
++set promptcolor lightwhite,grey
+ # set statuscolor bold,white,green
+ # set errorcolor bold,white,red
+ # set spotlightcolor black,lightyellow
+@@ -222,7 +222,7 @@
+ # set functioncolor green
+ 
+ ## In root's .nanorc you might want to use:
+-# set titlecolor bold,white,magenta
++set titlecolor bold,white,magenta
+ # set promptcolor black,yellow
+ # set statuscolor bold,white,magenta
+ # set errorcolor bold,white,red
+@@ -234,12 +234,17 @@
+ # set keycolor lightmagenta
+ # set functioncolor magenta
+ 
++## Mine:
++set numbercolor bold,black
++set stripecolor ,brightblack
++
+ 
+ ## === Syntax coloring ===
+ ## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
+ 
+ ## To include most of the existing syntax definitions, you can do:
+-# include "/usr/share/nano/*.nanorc"
++include "/usr/share/nano/*.nanorc"
++include "/usr/share/nano-syntax-highlighting/*.nanorc"
+ 
+ ## Or you can select just the ones you need.  For example:
+ # include "/usr/share/nano/html.nanorc"
+@@ -329,3 +334,7 @@
+ #bind ^U "{mark}{home}{zap}" main
+ #bind ^Z undo main
+ #bind ^Y redo main
++
++## Highlight trailing whitespace
++syntax "default"
++icolor ,green "[[:space:]]+$"
