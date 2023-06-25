@@ -46,3 +46,14 @@ function sumargs()
 	[ x"$1"x = xx ] && selector="$(< /dev/stdin)"
 	for i in $selector; do sum=$((sum + i)); done; echo $sum
 )
+
+# Change working directory and move file
+function cdmv()
+{
+	dir="$1"
+	shift
+	files="$(realpath "$*")"
+	if [ x"$dir"x != xx ]; then
+		cd $dir && mv "$files" .
+	fi
+}
