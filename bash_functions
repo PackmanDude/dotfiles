@@ -16,7 +16,7 @@ function nano()
 	nano='/usr/bin/env nano'
 
 	[ "$*" != "${*/java/}" ] \
-	&& $nano "$@" -J 120 \
+	&& $nano "$@" -J 150 \
 	|| $nano "$@"
 )
 
