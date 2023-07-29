@@ -81,7 +81,6 @@ function _timer_start()
 {
 	timer=${timer:-$SECONDS}
 }
-#
 function _timer_stop()
 {
 	local ret=$? formatted_timer
@@ -108,7 +107,6 @@ function _timer_stop()
 	fi
 	unset timer
 }
-#
 trap '_timer_start' DEBUG
 export PROMPT_COMMAND=_timer_stop
 
@@ -116,6 +114,5 @@ export PROMPT_COMMAND=_timer_stop
 export VISUAL=nano
 export EDITOR=$VISUAL
 
-# Autorun
-if [ ! "$SSH_TTY" ] || [ ! "$DISPLAY" ]; then cls; fi
+[ "$SSH_TTY" ] || clear
 neofetch
