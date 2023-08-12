@@ -68,7 +68,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if [ ! shopt -oq posix ]; then
+if ! shopt -oq posix; then
 	if [ -f /usr/share/bash-completion/bash_completion ]; then
 		. /usr/share/bash-completion/bash_completion
 	elif [ -f /etc/bash_completion ]; then
@@ -81,7 +81,7 @@ function _timer_start()
 {
 	timer=${timer:-$SECONDS}
 }
-#
+
 function _timer_stop()
 {
 	local ret=$? formatted_timer
@@ -108,7 +108,6 @@ function _timer_stop()
 	fi
 	unset timer
 }
-#
 trap '_timer_start' DEBUG
 export PROMPT_COMMAND=_timer_stop
 
