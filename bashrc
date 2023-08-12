@@ -21,7 +21,7 @@ export HISTFILESIZE=$HISTSIZE
 
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-shopt -s checkwinsize
+[[ $DISPLAY ]] && shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -52,7 +52,11 @@ esac
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
-	[ -r ~/.dircolors ] && eval '$(dircolors -b ~/.dircolors)' || eval '$(dircolors -b)'
+	if [ -r ~/.dircolors ]; then
+		eval "$(dircolors -b ~/.dircolors)"
+	else
+		eval "$(dircolors -b)"
+	fi
 fi
 
 # colored GCC warnings and errors
