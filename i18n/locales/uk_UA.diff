@@ -14,7 +14,7 @@
  %am_pm     "<U0434><U043E>";"<U043F><U043E>"   % "do" ; "po" - do obidu/po obidi
  % Empty strings are used to force 24h time format.
 -am_pm     "";""
-+am_pm     "AM";"PM"
++am_pm     "ДП";"ПП"
  
  % Define the first day of the week to be displayed in a calendar.
  % This weekday is relative to the date defined in the <week> keyword.
