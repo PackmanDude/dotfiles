@@ -4,5 +4,5 @@ Type = Package
 Target = glibc
 
 [Action]
-When = PreTransaction
-Exec = "patch /usr/share/i18n/locales/uk_UA /home/packman/dotfiles/i18n/locales/uk_UA.diff"
+When = PostTransaction
+Exec = /bin/sh -c 'patch /usr/share/i18n/locales/uk_UA /home/packman/dotfiles/i18n/locales/uk_UA.diff && locale-gen'
