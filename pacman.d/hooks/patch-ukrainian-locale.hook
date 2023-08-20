@@ -1,0 +1,8 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = glibc
+
+[Action]
+When = PreTransaction
+Exec = "patch /usr/share/i18n/locales/uk_UA /home/packman/dotfiles/i18n/locales/uk_UA.diff"
