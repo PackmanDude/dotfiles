@@ -5,4 +5,4 @@ Target = glibc
 
 [Action]
 When = PostTransaction
-Exec = /bin/sh -c 'patch /usr/share/i18n/locales/uk_UA /home/packman/dotfiles/i18n/locales/uk_UA.diff && locale-gen'
+Exec = /bin/sh -c 'patch /usr/share/i18n/locales/uk_UA $HOME/dotfiles/i18n/locales/uk_UA.diff && locale-gen'
