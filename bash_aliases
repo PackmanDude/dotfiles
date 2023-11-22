@@ -18,7 +18,7 @@ alias ..='cd ..'
 alias gcc='gcc -std=c99 -Wall -Wextra -Wpedantic -Wformat=2 -Wshadow \
 	-Wwrite-strings -Wstrict-prototypes -Wold-style-definition \
 	-Wredundant-decls -Wnested-externs -Wmissing-include-dirs \
-	-Wjump-misses-init -Wlogical-op -Warith-conversion'
+	-Wjump-misses-init -Wlogical-op'
 #
 alias mv='mv -iv'
 alias cp='cp -aiv'
