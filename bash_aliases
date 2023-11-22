@@ -8,9 +8,9 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 ## Голосовий асистент "Нігон"
-alias аллобялть='echo шо'
-alias когда='echo завтра.'
-alias м='echo м'
+alias аллобялть='printf шо\\n'
+alias когда='printf завтра.\\n'
+alias м='printf м\\n'
 
 ## Інше
 alias cls='clear'
@@ -18,7 +18,7 @@ alias ..='cd ..'
 alias gcc='gcc -std=c99 -Wall -Wextra -Wpedantic -Wformat=2 -Wshadow \
 	-Wwrite-strings -Wstrict-prototypes -Wold-style-definition \
 	-Wredundant-decls -Wnested-externs -Wmissing-include-dirs \
-	-Wjump-misses-init -Wlogical-op'
+	-Wjump-misses-init -Wlogical-op -Warith-conversion'
 #
 alias mv='mv -iv'
 alias cp='cp -aiv'
