@@ -1,9 +1,3 @@
-# find without access errors display
-function find-silently()
-(
-	/usr/bin/env find "$@" 2>/dev/null
-)
-
 # ls Largest Files
 function lslf()
 (
