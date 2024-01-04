@@ -1,7 +1,7 @@
 # ls Largest Files
 function lslf()
 (
-	du -hxs -- * | sort -hr | head -"$1"
+	du -hxs -- "$1"* | sort -hr | head -"$2"
 )
 
 # nano
