@@ -1,3 +1,5 @@
+--- makepkg.conf	0001-01-01 00:00:00.000000000 +0000
++++ makepkg.conf	0001-01-01 00:00:00.000000000 +0000
 @@ -46,7 +46,7 @@
  LTOFLAGS="-flto=auto"
  #RUSTFLAGS="-C opt-level=2"
