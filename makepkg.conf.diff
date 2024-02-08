@@ -1,8 +1,8 @@
---- makepkg.conf	0001-01-01 00:00:00.000000000 +0000
-+++ makepkg.conf	0001-01-01 00:00:00.000000000 +0000
-@@ -46,7 +46,7 @@
+--- makepkg.conf	2024-02-08 22:41:51.470631705 +0200
++++ makepkg.conf	2024-02-08 22:41:51.470631705 +0200
+@@ -48,7 +48,7 @@
  LTOFLAGS="-flto=auto"
- #RUSTFLAGS="-C opt-level=2"
+ RUSTFLAGS=""
  #-- Make Flags: change this for DistCC/SMP systems
 -#MAKEFLAGS="-j2"
 +MAKEFLAGS="-j$(($(nproc)+1))"
