@@ -1,8 +1,8 @@
---- makepkg.conf	2024-02-08 22:41:51.470631705 +0200
-+++ makepkg.conf	2024-02-08 22:41:51.470631705 +0200
-@@ -48,7 +48,7 @@
+--- makepkg.conf	2024-03-15 22:14:55.000000000 +0200
++++ makepkg.conf	2024-03-15 22:14:55.000000000 +0200
+@@ -50,7 +50,7 @@
  LTOFLAGS="-flto=auto"
- RUSTFLAGS=""
+ RUSTFLAGS="-Cforce-frame-pointers=yes"
  #-- Make Flags: change this for DistCC/SMP systems
 -#MAKEFLAGS="-j2"
 +MAKEFLAGS="-j$(($(nproc)+1))"
