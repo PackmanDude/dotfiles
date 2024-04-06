@@ -17,7 +17,7 @@ function nano()
 # nazis bad
 function nazify()
 (
-	sed 's/[A-Za-z]/卐/g'
+	sed 's/[A-Za-z]/卐/g' "${1:--}"
 )
 
 # Implementing a new function be like
