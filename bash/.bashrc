@@ -3,7 +3,7 @@
 # for examples
 
 # If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+[[ "$-" != *i* ]] && return
 
 # Set tabs width size
 tabs -4
@@ -17,11 +17,11 @@ shopt -s histappend
 
 # For setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 export HISTSIZE=-1
-export HISTFILESIZE=$HISTSIZE
+export HISTFILESIZE="$HISTSIZE"
 
 # Check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
-[[ $DISPLAY ]] && shopt -s checkwinsize
+[ "$DISPLAY" ] && shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
@@ -83,32 +83,32 @@ fi
 # Show elapsed time for a previous command
 function _timer_start()
 {
-	timer=${timer:-$SECONDS}
+	timer="${timer:-$SECONDS}"
 }
 
 function _timer_stop()
 {
-	local ret=$? formatted_timer
+	local ret="$?" formatted_timer
 	local elapsed_time=$((SECONDS - timer))
-	if [ $elapsed_time -ge 86400 ]; then
+	if [ "$elapsed_time" -ge 86400 ]; then
 		formatted_timer="~$((elapsed_time/86400))d$((elapsed_time%86400/3600))h$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
-	elif [ $elapsed_time -ge 3600 ]; then
+	elif [ "$elapsed_time" -ge 3600 ]; then
 		formatted_timer="~$((elapsed_time%86400/3600))h$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
-	elif [ $elapsed_time -ge 60 ]; then
+	elif [ "$elapsed_time" -ge 60 ]; then
 		formatted_timer="~$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
 	else
 		formatted_timer="~${elapsed_time}s passed"
 	fi
 
-	if [ $elapsed_time -gt 0 ]; then
-		if [ $ret -ne 0 ]; then
-			printf "\e[1;31m$formatted_timer\e[m\n"
+	if [ "$elapsed_time" -gt 0 ]; then
+		if [ "$ret" -ne 0 ]; then
+			printf "\e[1;31m%s\e[m\n" "$formatted_timer"
 			unset timer
 			return
 		fi
-		printf "\e[1;32m$formatted_timer\e[m\n"
-	elif [ $ret -ne 0 ]; then
-		printf "\e[1;31m$formatted_timer\e[m\n"
+		printf "\e[1;32m%s\e[m\n" "$formatted_timer"
+	elif [ "$ret" -ne 0 ]; then
+		printf "\e[1;31m%s\e[m\n" "$formatted_timer"
 	fi
 	unset timer
 }
@@ -117,7 +117,7 @@ export PROMPT_COMMAND=_timer_stop
 
 # Environment variables
 export VISUAL=nano
-export EDITOR=$VISUAL
+export EDITOR="$VISUAL"
 
 # Autorun
 neofetch
