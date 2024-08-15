@@ -8,10 +8,9 @@ function lslf()
 function nano()
 (
 	nano='/usr/bin/env nano'
-
-	[ "$*" != "${*/java/}" ] \
-	&& $nano "$@" -J 150 \
-	|| $nano "$@"
+	if [ "$*" != "${*/java/}" ]; then $nano "$@" -J 150
+	else $nano "$@"
+	fi
 )
 
 # nazis bad
@@ -36,9 +35,9 @@ function sleepsda()
 # Sum given arguments
 function sumargs()
 (
-	selector="$0 $@"
-	[ x"$1"x = xx ] && selector="$(< /dev/stdin)"
-	for i in $selector; do sum=$((sum + i)); done; echo $sum
+	selector="$0 $*"
+	[ "$1" = "" ] && selector="$(</dev/stdin)"
+	for i in $selector; do sum=$((sum + i)); done; echo "$sum"
 )
 
 # Change working directory and move file
@@ -48,6 +47,6 @@ function cdmv()
 	shift
 	files="$(realpath "$*")"
 	if [ x"$dir"x != xx ]; then
-		cd $dir && mv "$files" .
+		cd "$dir" && mv "$files" .
 	fi
 }
