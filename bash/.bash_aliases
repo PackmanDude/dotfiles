@@ -21,7 +21,7 @@ alias gcc='gcc -std=c99 -Wall -Wextra -Wpedantic -Wformat=2 -Wshadow \
 #
 alias cp='cp -aiv'
 alias mv='mv -iv'
-alias rm='rm -rIv'
+alias rm='rm -Iv'
 alias rmdir='rmdir -v'
 #
 alias chmod='chmod -v'
