@@ -50,6 +50,10 @@
 ## Do case-sensitive searches by default.
 # set casesensitive
 
+## Interpret digits given on the command line after a colon after a filename
+## as the line number to go to in that file.
+set colonparsing
+
 ## Constantly display the cursor position in the status bar or minibar.
 # set constantshow
 
@@ -98,8 +102,8 @@ set locking
 # set minibar
 
 ## Enable mouse support, if available for your system.  When enabled,
-## mouse clicks can be used to place the cursor, set the mark (with a
-## double click), and execute shortcuts.  The mouse will work in the
+## mouse clicks can be used to place the cursor, set the mark (with
+## two clicks), and execute shortcuts.  The mouse will work in the
 ## X Window System, and on the console when gpm is running.
 # set mouse
 
@@ -221,7 +225,7 @@ set promptcolor lightwhite,grey
 # set errorcolor bold,white,red
 # set spotlightcolor black,lightyellow
 # set selectedcolor lightwhite,magenta
-# set stripecolor ,yellow
+# set stripecolor ,#444
 # set scrollercolor cyan
 # set numbercolor cyan
 # set keycolor cyan
@@ -249,13 +253,13 @@ set stripecolor ,brightblack
 ## For all details, see 'man nanorc', section SYNTAX HIGHLIGHTING.
 
 ## To include most of the existing syntax definitions, you can do:
-include "/usr/share/nano/*.nanorc"
-include "/usr/share/nano-syntax-highlighting/*.nanorc"
+include /usr/share/nano/*.nanorc
+include /usr/share/nano-syntax-highlighting/*.nanorc
 
 ## Or you can select just the ones you need.  For example:
-# include "/usr/share/nano/html.nanorc"
-# include "/usr/share/nano/python.nanorc"
-# include "/usr/share/nano/sh.nanorc"
+# include /usr/share/nano/html.nanorc
+# include /usr/share/nano/python.nanorc
+# include /usr/share/nano/sh.nanorc
 
 ## In /usr/share/nano/extra/ you can find some syntaxes that are
 ## specific for certain distros or for some less common languages.
@@ -292,13 +296,13 @@ include "/usr/share/nano-syntax-highlighting/*.nanorc"
 # unbind M-T main
 ## (Those functions are still accessible through ^T^J and ^T^V.)
 
-## For quickly uppercasing or lowercasing the word under or after the cursor.
+## For quickly uppercasing or lowercasing the word that the cursor is on.
 ## (These effectively select a word and pipe it through a sed command.)
-# bind Sh-M-U "{nextword}{mark}{prevword}{execute}|sed 's/.*/\U&/'{enter}" main
-# bind Sh-M-L "{nextword}{mark}{prevword}{execute}|sed 's/.*/\L&/'{enter}" main
+# bind Sh-M-U "{nextword}{mark}{prevword}{execute}| sed 's/.*/\U&/' {enter}" main
+# bind Sh-M-L "{nextword}{mark}{prevword}{execute}| sed 's/.*/\L&/' {enter}" main
 
 ## For copying a marked region to the system clipboard:
-# bind Sh-M-C "{execute}|xsel -ib{enter}{undo}" main
+# bind Sh-M-C "{execute}| xsel -ib {enter}{undo}" main
 
 ## For normalizing Unicode to precomposed characters:
 # bind Sh-M-N "{execute}| uconv -x nfc {enter}" main
