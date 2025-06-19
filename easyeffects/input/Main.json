@@ -22,7 +22,7 @@
             "input-gain": 0.0,
             "lookahead": 5.0,
             "mode": "Herm Thin",
-            "output-gain": 0.0,
+            "output-gain": 5.0,
             "oversampling": "None",
             "release": 20.0,
             "sidechain-preamp": 0.0,
