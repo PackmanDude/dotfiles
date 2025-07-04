@@ -20,14 +20,14 @@
             "external-sidechain": false,
             "gain-boost": false,
             "input-gain": 0.0,
-            "lookahead": 5.0,
+            "lookahead": 0.1,
             "mode": "Herm Thin",
             "output-gain": 0.0,
             "oversampling": "None",
             "release": 20.0,
             "sidechain-preamp": 0.0,
             "stereo-link": 100.0,
-            "threshold": -20.0
+            "threshold": -10.0
         },
         "plugins_order": [
             "echo_canceller#0",
