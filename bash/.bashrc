@@ -83,32 +83,26 @@ fi
 # Show elapsed time for a previous command
 function _timer_start()
 {
-	timer="${timer:-$SECONDS}"
+	timer=${timer:-$SECONDS}
 }
 
 function _timer_stop()
 {
-	local ret="$?" formatted_timer
-	local elapsed_time=$((SECONDS - timer))
-	if [ "$elapsed_time" -ge 86400 ]; then
-		formatted_timer="~$((elapsed_time/86400))d$((elapsed_time%86400/3600))h$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
-	elif [ "$elapsed_time" -ge 3600 ]; then
-		formatted_timer="~$((elapsed_time%86400/3600))h$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
-	elif [ "$elapsed_time" -ge 60 ]; then
-		formatted_timer="~$((elapsed_time%3600/60))m$((elapsed_time%60))s passed"
+	local ret=$? formatted_timer elapsed_time=$((SECONDS - timer))
+	if [ $elapsed_time -ge 86400 ]; then
+		formatted_timer="~$((elapsed_time / 86400))d$((elapsed_time % 86400 / 3600))h$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s passed"
+	elif [ $elapsed_time -ge 3600 ]; then
+		formatted_timer="~$((elapsed_time % 86400 / 3600))h$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s passed"
+	elif [ $elapsed_time -ge 60 ]; then
+		formatted_timer="~$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s passed"
 	else
 		formatted_timer="~${elapsed_time}s passed"
 	fi
 
-	if [ "$elapsed_time" -gt 0 ]; then
-		if [ "$ret" -ne 0 ]; then
-			printf "\e[1;31m%s\e[m\n" "$formatted_timer"
-			unset timer
-			return
-		fi
+	if [ $ret -ne 0 ]; then
+		printf "\e[1;31m%d %s\e[m\n" $ret "$formatted_timer"
+	elif [ $elapsed_time -gt 0 ]; then
 		printf "\e[1;32m%s\e[m\n" "$formatted_timer"
-	elif [ "$ret" -ne 0 ]; then
-		printf "\e[1;31m%s\e[m\n" "$formatted_timer"
 	fi
 	unset timer
 }
