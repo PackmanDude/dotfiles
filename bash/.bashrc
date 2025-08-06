@@ -90,13 +90,13 @@ function _timer_stop()
 {
 	local ret=$? formatted_timer elapsed_time=$((SECONDS - timer))
 	if [ $elapsed_time -ge 86400 ]; then
-		formatted_timer="~$((elapsed_time / 86400))d$((elapsed_time % 86400 / 3600))h$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s passed"
+		formatted_timer="$((elapsed_time / 86400))d$((elapsed_time % 86400 / 3600))h$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s±1s passed"
 	elif [ $elapsed_time -ge 3600 ]; then
-		formatted_timer="~$((elapsed_time % 86400 / 3600))h$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s passed"
+		formatted_timer="$((elapsed_time % 86400 / 3600))h$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s±1s passed"
 	elif [ $elapsed_time -ge 60 ]; then
-		formatted_timer="~$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s passed"
+		formatted_timer="$((elapsed_time % 3600 / 60))m$((elapsed_time % 60))s±1s passed"
 	else
-		formatted_timer="~${elapsed_time}s passed"
+		formatted_timer="${elapsed_time}s±1s passed"
 	fi
 
 	if [ $ret -ne 0 ]; then
