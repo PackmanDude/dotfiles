@@ -14,22 +14,11 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-# Start a compositor
 exec_always --no-startup-id picom -b --config /dev/null --backend xrender --unredir-if-possible --vsync
-
-# Wallpaper setup
 exec --no-startup-id nitrogen --restore
-
-# Polkit dumb agent
 exec --no-startup-id polkit-dumb-agent &
-
-# CoreCtrl autostart
 exec --no-startup-id corectrl
-
-# Clipboard manager autostart
 exec --no-startup-id parcellite
-
-# Keep EasyEffects running
 exec --no-startup-id easyeffects --gapplication-service
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
