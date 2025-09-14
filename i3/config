@@ -14,12 +14,14 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
+# Autostart
 exec_always --no-startup-id picom -b --config /dev/null --backend xrender --unredir-if-possible --vsync
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id polkit-dumb-agent &
 exec --no-startup-id corectrl
 exec --no-startup-id parcellite
 exec --no-startup-id easyeffects --gapplication-service
+exec --no-startup-id gxkb &
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -66,9 +68,6 @@ exec --no-startup-id xset dpms 0 0 0
 
 # Modify screensaver's interval
 exec --no-startup-id xset s 1800 1800
-
-# XKB Indicator
-exec --no-startup-id gxkb &
 
 # Mouse setting
 #exec --no-startup-id xinput set-prop 'Logitech G102 LIGHTSYNC Gaming Mouse' 'libinput Accel Speed' -1
