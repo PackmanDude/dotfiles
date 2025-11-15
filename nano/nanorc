@@ -54,7 +54,7 @@
 ## as the line number to go to in that file.
 set colonparsing
 
-## Constantly display the cursor position in the status bar or minibar.
+## Constantly report the cursor position, in the status bar or minibar.
 # set constantshow
 
 ## Use cut-from-cursor-to-end-of-line by default.
@@ -126,14 +126,14 @@ set locking
 ## string means the operating-directory feature is turned off.
 # set operatingdir ""
 
-## Remember the cursor position in each file for the next editing session.
+## Remember the position of cursor and anchors for the next editing session.
 # set positionlog
 
 ## Preserve the XON and XOFF keys (^Q and ^S).
 # set preserve
 
 ## The characters treated as closing punctuation when justifying paragraphs.
-## This may not contain blank characters.  Only these closing punctuations,
+## This may not contain blank characters.  Only these terminating characters,
 ## optionally followed by closing brackets, can end sentences.
 # set punct "!.?"
 
@@ -303,6 +303,12 @@ include /usr/share/nano-syntax-highlighting/*.nanorc
 
 ## For copying a marked region to the system clipboard:
 # bind Sh-M-C "{execute}| xsel -ib {enter}{undo}" main
+
+## For copying text to the local clipboard via OSC 52 (if terminal supports it):
+# bind M-* "{execute}|| printf "\033]52;c;%s\007" "$(base64 | tr -d '\n')" {enter}{undo}" main
+
+## For wiping all anchors in a buffer:
+# bind Sh-M-W "{execute}| cat {enter}" main
 
 ## For normalizing Unicode to precomposed characters:
 # bind Sh-M-N "{execute}| uconv -x nfc {enter}" main
