@@ -1,0 +1,9 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = wine-staging
+
+[Action]
+Description = Updating the default wine prefix...
+When = PostTransaction
+Exec = /usr/bin/env su -c 'wineboot -u' packman
