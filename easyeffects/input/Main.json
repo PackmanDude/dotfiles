@@ -3,29 +3,47 @@
         "blocklist": [],
         "echo_canceller#0": {
             "bypass": false,
-            "filter-length": 100,
+            "echo-canceller": {
+                "automatic-gain-control": true,
+                "enable": true,
+                "enforce-high-pass": true,
+                "mobile-mode": false
+            },
+            "high-pass": {
+                "enable": true,
+                "full-band": true
+            },
             "input-gain": 0.0,
-            "near-end-suppression": -70,
-            "output-gain": 0.0,
-            "residual-echo-suppression": -70
+            "noise-suppression": {
+                "enable": true,
+                "level": "Moderate"
+            },
+            "output-gain": 0.0
         },
         "limiter#0": {
             "alr": false,
             "alr-attack": 5.0,
             "alr-knee": 0.0,
+            "alr-knee-smooth": -5.0,
             "alr-release": 50.0,
             "attack": 5.0,
             "bypass": false,
             "dithering": "None",
-            "external-sidechain": false,
             "gain-boost": false,
             "input-gain": 0.0,
+            "input-to-link": 0.0,
+            "input-to-sidechain": 0.0,
+            "link-to-input": 0.0,
+            "link-to-sidechain": 0.0,
             "lookahead": 0.1,
             "mode": "Herm Thin",
             "output-gain": 0.0,
             "oversampling": "None",
             "release": 20.0,
             "sidechain-preamp": 0.0,
+            "sidechain-to-input": 0.0,
+            "sidechain-to-link": 0.0,
+            "sidechain-type": "Internal",
             "stereo-link": 100.0,
             "threshold": -10.0
         },
@@ -39,8 +57,9 @@
             "enable-vad": true,
             "input-gain": 0.0,
             "model-name": "",
-            "output-gain": 0.0,
+            "output-gain": 3.0,
             "release": 20.0,
+            "use-standard-model": true,
             "vad-thres": 50.0,
             "wet": 0.0
         }
