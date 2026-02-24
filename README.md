@@ -10,6 +10,10 @@ My dotfiles.
 loglevel=3 quiet amdgpu.ppfeaturemask=0xffffffff mitigations=auto,nosmt zswap.enabled=0 video=1920x1080@144
 ```
 
+### TTY font
+
+```ter-v16n```
+
 ### Fonts installed
 
 ```
