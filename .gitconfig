@@ -1,0 +1,13 @@
+[user]
+	email = 99031872+PackmanDude@users.noreply.github.com
+	name = PackmanDude
+[pager]
+	diff = false
+[init]
+	defaultBranch = main
+[help]
+	autoCorrect = prompt
+[diff]
+	algorithm = histogram
+[submodule]
+	recurse = true
