@@ -102,9 +102,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Take a screenshot
-bindsym Print exec --no-startup-id flameshot gui
-bindsym Shift+Print exec --no-startup-id "xwd -root | convert xwd:- png:- | xclip -sel c -t image/png"
-bindsym Control+Print exec --no-startup-id "sleep .07; xwd | convert xwd:- png:- | xclip -sel c -t image/png"
+bindsym $mod+z exec --no-startup-id flameshot gui
+bindsym $mod+Shift+z exec --no-startup-id "xwd -root | convert xwd:- png:- | xclip -sel c -t image/png"
+bindsym $mod+Control+z exec --no-startup-id "xwd | convert xwd:- png:- | xclip -sel c -t image/png"
 
 # Change focus
 bindsym $mod+Left focus left
