@@ -1,0 +1,20 @@
+[user]
+	email = 99031872+PackmanDude@users.noreply.github.com
+	name = PackmanDude
+	signingkey = /home/packman/.ssh/id_rsa.pub
+[pager]
+	diff = false
+[init]
+	defaultBranch = main
+[help]
+	autoCorrect = prompt
+[diff]
+	algorithm = histogram
+[submodule]
+	recurse = true
+[commit]
+	gpgsign = true
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	allowedSignersFile = ~/.ssh/allowed_signers
