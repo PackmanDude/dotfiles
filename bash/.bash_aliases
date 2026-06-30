@@ -10,7 +10,7 @@ alias grep='grep --color=auto'
 # Relocate files
 alias cp='cp -aiv'
 alias mv='mv -iv'
-alias rm='rm -Iv'
+alias rm='rm -iv'
 alias rmdir='rmdir -v'
 # File attributes
 alias chmod='chmod -v'
