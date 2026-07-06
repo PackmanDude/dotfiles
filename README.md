@@ -14,9 +14,7 @@ loglevel=3 quiet amdgpu.ppfeaturemask=0xffffffff mitigations=auto,nosmt zswap.en
 
 ```
 noto-fonts
-noto-fonts-cjk
 noto-fonts-emoji
-noto-fonts-extra
 otf-font-awesome
 terminus-font
 ttf-dejavu
