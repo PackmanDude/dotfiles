@@ -117,3 +117,5 @@ export EDITOR="$VISUAL"
 
 # Autorun
 neofetch
+
+. "$HOME/.cargo/env"
